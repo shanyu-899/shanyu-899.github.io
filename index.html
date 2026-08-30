@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>丝与沙 SILK&amp;DESERT | 沙特女性中式文创品牌</title>
+<meta name="description" content="丝与沙 SILK&DESERT —— 融合中沙文化的女性文创品牌。项目PPT与商业计划书在线展示。">
+<style>
+  :root{
+    --sand:    #e8dcc8;
+    --sand-2:  #f3ecdd;
+    --dune:    #c9b391;
+    --brown:   #6b4f32;
+    --brown-d: #4a3520;
+    --ink:     #2f2418;
+    --gold:    #a87f3d;
+    --line:    #d9c8ab;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family: "PingFang SC","Microsoft YaHei","Source Han Sans SC",-apple-system,"Helvetica Neue",Arial,sans-serif;
+    background:linear-gradient(180deg,var(--sand-2) 0%,var(--sand) 100%);
+    color:var(--ink);
+    line-height:1.7;
+    min-height:100vh;
+  }
+  .wrap{ max-width:1060px; margin:0 auto; padding:0 24px; }
+
+  /* ============ Header ============ */
+  header{
+    position:relative;
+    text-align:center;
+    padding:72px 24px 56px;
+    background:
+      radial-gradient(1200px 500px at 50% -120px, rgba(255,248,235,.9), rgba(255,248,235,0) 70%),
+      linear-gradient(135deg,var(--brown-d) 0%,var(--brown) 55%,var(--dune) 130%);
+    color:#f7f0e3;
+    overflow:hidden;
+  }
+  header::before, header::after{
+    content:"";
+    position:absolute;
+    left:0; right:0;
+    height:2px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+  header::before{ top:0; }
+  header::after{ bottom:0; }
+  .brand-en{
+    font-size:15px;
+    letter-spacing:.42em;
+    color:var(--dune);
+    text-transform:uppercase;
+    font-weight:600;
+  }
+  h1.title{
+    margin-top:14px;
+    font-size:52px;
+    font-weight:700;
+    letter-spacing:.12em;
+  }
+  .subtitle{
+    margin-top:16px;
+    font-size:19px;
+    color:#eadfc9;
+    font-weight:400;
+  }
+  .tagline{
+    margin-top:26px;
+    display:inline-block;
+    padding:9px 26px;
+    border:1px solid rgba(200,175,130,.55);
+    border-radius:40px;
+    font-size:14.5px;
+    letter-spacing:.18em;
+    color:#f0e6d2;
+    background:rgba(255,255,255,.05);
+  }
+  .meta-row{
+    margin-top:26px;
+    display:flex;
+    justify-content:center;
+    gap:38px;
+    flex-wrap:wrap;
+    font-size:14px;
+    color:#d8c9ad;
+  }
+  .meta-row b{ color:#f0e6d2; font-weight:600; }
+
+  /* ============ Intro strip ============ */
+  .intro{
+    display:grid;
+    grid-template-columns:1.15fr 1fr;
+    gap:40px;
+    padding:56px 0 20px;
+    align-items:center;
+  }
+  .intro h2{
+    font-size:24px;
+    color:var(--brown);
+    margin-bottom:14px;
+    letter-spacing:.06em;
+  }
+  .intro p{
+    font-size:15.5px;
+    color:#5c4a34;
+    margin-bottom:12px;
+  }
+  .intro .stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+  }
+  .stat{
+    background:#fffdf7;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:16px 10px;
+    text-align:center;
+    box-shadow:0 4px 14px rgba(90,60,30,.06);
+  }
+  .stat .n{
+    font-size:24px;
+    font-weight:700;
+    color:var(--gold);
+    letter-spacing:.02em;
+  }
+  .stat .l{
+    margin-top:4px;
+    font-size:12px;
+    color:#8a7355;
+    letter-spacing:.06em;
+  }
+
+  /* ============ Doc cards ============ */
+  .docs{ padding:36px 0 72px; }
+  .section-title{
+    text-align:center;
+    font-size:26px;
+    color:var(--brown);
+    letter-spacing:.16em;
+    margin:20px 0 34px;
+  }
+  .section-title::after{
+    content:"";
+    display:block;
+    width:56px;
+    height:3px;
+    margin:14px auto 0;
+    border-radius:2px;
+    background:linear-gradient(90deg,var(--gold),var(--dune));
+  }
+  .doc-card{
+    display:grid;
+    grid-template-columns:300px 1fr;
+    gap:34px;
+    background:#fffdf7;
+    border:1px solid var(--line);
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:34px;
+    box-shadow:0 10px 30px rgba(90,60,30,.08);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .doc-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 18px 42px rgba(90,60,30,.14);
+  }
+  .cover-wrap{
+    position:relative;
+    background:#efe6d3;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:22px;
+  }
+  .cover-wrap img{
+    width:100%;
+    max-height:340px;
+    object-fit:cover;
+    border-radius:10px;
+    border:1px solid var(--line);
+    box-shadow:0 6px 20px rgba(60,40,15,.18);
+  }
+  .cover-tag{
+    position:absolute;
+    top:16px; left:16px;
+    background:var(--brown);
+    color:#f4ecdb;
+    font-size:12px;
+    letter-spacing:.1em;
+    padding:5px 12px;
+    border-radius:6px;
+  }
+  .doc-body{ padding:32px 34px 30px 8px; display:flex; flex-direction:column; }
+  .doc-body h3{
+    font-size:23px;
+    color:var(--brown-d);
+    letter-spacing:.06em;
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .doc-body h3 .en{
+    font-size:13px;
+    color:#a08a68;
+    letter-spacing:.14em;
+    font-weight:500;
+    text-transform:uppercase;
+  }
+  .doc-desc{
+    margin:14px 0 20px;
+    font-size:15px;
+    color:#5c4a34;
+  }
+  .doc-meta{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+    font-size:13.5px;
+    color:#8a7355;
+    margin-bottom:22px;
+  }
+  .doc-meta span{ display:inline-flex; align-items:center; gap:6px; }
+  .btn-row{
+    margin-top:auto;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:11px 24px;
+    border-radius:40px;
+    font-size:15px;
+    font-weight:600;
+    text-decoration:none;
+    letter-spacing:.04em;
+    transition:background .2s, color .2s, transform .15s;
+    border:1.5px solid transparent;
+  }
+  .btn:active{ transform:translateY(1px); }
+  .btn-primary{
+    background:var(--brown);
+    color:#f7f0e3;
+  }
+  .btn-primary:hover{ background:var(--brown-d); }
+  .btn-ghost{
+    background:transparent;
+    color:var(--brown);
+    border-color:var(--dune);
+  }
+  .btn-ghost:hover{ background:var(--sand-2); }
+
+  /* ============ Footer ============ */
+  footer{
+    text-align:center;
+    padding:34px 24px 44px;
+    border-top:1px solid var(--line);
+    color:#8a7355;
+    font-size:13.5px;
+    background:rgba(255,253,247,.6);
+  }
+  footer .tiny{ margin-top:8px; font-size:12px; color:#a7947a; }
+
+  @media (max-width:820px){
+    .intro{ grid-template-columns:1fr; gap:26px; padding-top:38px; }
+    .doc-card{ grid-template-columns:1fr; }
+    .doc-body{ padding:6px 26px 28px; }
+    .cover-wrap img{ max-height:300px; }
+    h1.title{ font-size:38px; }
+    .meta-row{ gap:20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand-en">Silk &amp; Desert</div>
+    <h1 class="title">丝 与 沙</h1>
+    <div class="subtitle">沙特女性中式文创品牌开拓者</div>
+    <div class="tagline">以新中式手袋 · 为沙特女性编织第二语言</div>
+    <div class="meta-row">
+      <span>项目负责人 <b>FATIMA ZAHRA</b></span>
+      <span>参赛组别 <b>国际组</b></span>
+      <span>2025 中国国际大学生创新大赛</span>
+    </div>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="wrap" style="display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:center;">
+    <div>
+      <h2>关于项目</h2>
+      <p>「丝与沙」致力于通过新中式手包，赋予沙特女性"第二身体语言符号"，推动沙特绿色文创产业发展，筑牢中沙文化桥梁。创始人 Fatima 在沙特访学期间创立品牌，以中国刺绣工艺融合沙特传统图腾，打造兼具文化深度与市场活力的原创品牌。</p>
+      <p>目前已在沙特阿拉伯占据优势市场份额，成长为沙特文创领域的代表性新锐品牌。</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">100K+</div><div class="l">门店年客流</div></div>
+      <div class="stat"><div class="n">430K+</div><div class="l">网页浏览量</div></div>
+      <div class="stat"><div class="n">1.06万+</div><div class="l">首款爆款销量</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="docs">
+  <div class="wrap">
+    <div class="section-title">项 目 文 档</div>
+
+    <!-- 项目PPT -->
+    <div class="doc-card">
+      <div class="cover-wrap">
+        <span class="cover-tag">PPT</span>
+        <img src="assets/preview_p01.png" alt="丝与沙项目PPT封面">
+      </div>
+      <div class="doc-body">
+        <h3>项目 PPT <span class="en">Project Presentation</span></h3>
+        <p class="doc-desc">项目整体展示：从创业故事、市场洞察到商业模式、财务与规划，完整呈现丝与沙的创业蓝图与落地成果。</p>
+        <div class="doc-meta">
+          <span>📄 29 页</span>
+          <span>🖥 16:9 横版</span>
+          <span>📁 约 19 MB</span>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="pdf/2025S&D项目PPT.pdf" target="_blank" rel="noopener">在线预览 ↗</a>
+          <a class="btn btn-ghost" href="pdf/2025S&D项目PPT.pdf" download="丝与沙项目PPT.pdf">下载 PDF ↓</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 商业计划书 -->
+    <div class="doc-card">
+      <div class="cover-wrap">
+        <span class="cover-tag">计划书</span>
+        <img src="assets/bp_cover.png" alt="丝与沙商业计划书封面">
+      </div>
+      <div class="doc-body">
+        <h3>商业计划书 <span class="en">Business Plan</span></h3>
+        <p class="doc-desc">八章完整商业计划：执行概要、公司简介、市场分析、核心团队、产品介绍、商业模式、发展规划与财务分析。</p>
+        <div class="doc-meta">
+          <span>📄 72 页</span>
+          <span>📐 A4 竖版</span>
+          <span>📁 约 7.4 MB</span>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="pdf/S&D商业计划书.pdf" target="_blank" rel="noopener">在线预览 ↗</a>
+          <a class="btn btn-ghost" href="pdf/S&D商业计划书.pdf" download="丝与沙商业计划书.pdf">下载 PDF ↓</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div>丝与沙 SILK&amp;DESERT · 沙特女性中式文创品牌</div>
+  <div class="tiny">2025 中国国际大学生创新大赛 · 国际赛道项目展示</div>
+</footer>
+
+</body>
+</html>
